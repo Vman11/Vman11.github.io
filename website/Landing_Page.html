@@ -2,39 +2,90 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        html,
         body {
-            background-color: black;
-            height: 100vh;
+            height: 100%;
             margin: 0;
             padding: 0;
-            position: relative;
-            /*overflow: hidden;  Ensure no scrollbars */
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+            font-family: 'Press Start 2P';
+        }
+
+        body {
+            background-color: black;
+            overflow-y: scroll;
+            /* Allow vertical scrolling */
         }
 
         #selector {
-            position: absolute;
+            position: fixed;
+            /* Keep the video fixed in the background */
             top: 0;
             left: 0;
             width: 100vw;
-            height: 200vh;
-            object-fit: cover; /* Ensure the video covers the entire viewport */
-            z-index: 1;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            object-fit: cover;
+            /* Ensure the video covers the entire viewport */
+            z-index: -1;
+            /* Make sure the video is behind other content */
         }
 
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            /* Ensure content is on top of the video */
             color: white;
             text-align: center;
+            padding: 20px;
+            /* Add padding to prevent content from touching edges */
         }
 
-        h1 img, p img {
+        .test {
+            max-width: 100vw;
+            width: 80vw;
+        }
+
+        .robot {
+            width: 25vw;
+            height: 50vh;
+        }
+
+        h1 img,
+        p img {
             display: block;
             margin: 0 auto;
+        }
+
+        a {
+            color: rgb(195, 0, 255);
+        }
+
+        .robot-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .robot-container .robot {
+            flex: 1;
+        }
+
+        .text {
+            text-align: center;
+            flex: 2;
         }
     </style>
 </head>
@@ -49,31 +100,34 @@
             <img src="welcome.gif" alt="Welcome">
         </h1>
         <h2>
-        <style> 
-            a { 
-                color: rgb(195, 0, 255); 
-            } 
-            </style> 
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About Me</a>
-        &nbsp;
-        &nbsp;
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Tools I Like and Use</a>
-        &nbsp;
-        &nbsp;
-        <a href="mailto: vincenzoluigidimatteo@gmail.com"> Contact Me</a>
-        &nbsp;
-        &nbsp;
-        <a href="https://github.com/Vman11?tab=repositories"> Github</a>
-        &nbsp;
-        &nbsp;
-
+            <a href="mailto:vincenzoluigidimatteo@gmail.com">Contact Me</a>
+            &nbsp;
+            <a href="https://github.com/Vman11?tab=repositories">Github</a>
         </h2>
-        <p>
-            <img src="Snapchat-1425043887.jpg" alt="Snapchat Image">
-        </p>
-
+        <div>
+            Currently pursuing a
+            <img class="test" src="coollogo_com-115231070.gif">
+            <div class="robot-container">
+                <div class="robot">
+                    <img class="robot" src="anylizing_computer_10066WHT.gif">
+                </div>
+                <div class="text">
+                    Currently Enrolled at Rutgers University. I have currently taken classes focused on Machine Vision and work with 
+                    <a href="https://www.ece.rutgers.edu/kristin-dana">Kristin Dana</a> in her
+                    <a href="https://eceweb1.rutgers.edu/~kdana/"> computer vision and robotics lab</a>
+                    I have worked alot with <a href="https://www.kitware.com/"> Kitware</a> for their projects including
+                    <a href="https://gitlab.kitware.com/computer-vision/geowatch"> Geowatch</a> and KWALOP.
+                    Really into video games and retro consoles. Learning VHDL in my free time. Developed a simple Picture based Password Manager Called 
+                    <a href="https://github.com/Vman11/Pic-Pass">Pic-Pass</a> (Still WIP its bad). Taking a Machine Vision Class at Princeton University
+                    <br>
+                    Obsseed with Fortnite
+                </div>
+                <div class="robot" style=" transform: scaleX(-1);">
+                    <img class="robot" src="anylizing_computer_10066WHT.gif">
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>
